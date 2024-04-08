@@ -1,6 +1,8 @@
 import random
 import datetime
 import os
+import webbrowser
+
 def get_response(user_input):
     responses = {
         "hi": "Hello!",
@@ -16,6 +18,8 @@ def get_response(user_input):
         "where are you from": "I exist in the digital world, here to help you!",
         "thanks": "You're welcome!",
         "thank you": "You're welcome!",
+        "open google": "Opening Google...",
+        "open youtube": "Opening YouTube...",
         "default": "I'm not sure I understand. Can you try asking something else?"
     }
 
@@ -24,12 +28,16 @@ def get_response(user_input):
 
     # Check if the user input matches any predefined responses
     if user_input in responses:
+        if user_input == 'open google':
+            webbrowser.open("https://www.google.com")
+        elif user_input == 'open youtube':
+            webbrowser.open("https://www.youtube.com")
         return responses[user_input]
     else:
         return responses["default"]
 
 def main():
-    print("Welcome to the JARVIS assistent!")
+    print("Welcome to the JARVIS assistant!")
     print("You can start chatting. Type 'exit' to end the conversation.")
 
     while True:
@@ -43,3 +51,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
