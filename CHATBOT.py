@@ -23,10 +23,10 @@ def get_response(user_input):
         "default": "I'm not sure I understand. Can you try asking something else?"
     }
 
-    # Convert user input to lowercase for case insensitivity
+    # Converting user input to lowercase for case insensitivity
     user_input = user_input.lower()
 
-    # Check if the user input matches any predefined responses
+    # Checking if the user input matches any predefined responses
     if user_input in responses:
         if user_input == 'open google':
             webbrowser.open("https://www.google.com")
